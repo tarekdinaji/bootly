@@ -10,10 +10,11 @@
   </p>
 
   <p>
-    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+    <li><%= button_to "Delete", comment_path(@comment),method: :delete, data: { turbo: false } %></li>
+    <%# <%= link_to "Destroy Comment", [comment.article, comment], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-                } %>
+                } %> %>
   </p>
 
   
