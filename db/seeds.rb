@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+new_articles = { "Bangladesh Cricket Board Election" => ["Bangladesh cricket board is an assortment of clouns and fools", "public"],
+                 "Bangladesh Water Board Election" => ["Bangladesh cricket board is an assortment of clouns and fools", "public"],
+                 "Bangladesh Railway Board Election" => ["Bangladesh cricket board is an assortment of clouns and fools", "public"],
+                 "Bangladesh Electricity Board Election" => ["Bangladesh cricket board is an assortment of clouns and fools", "public"],
+                 "Bangladesh Football Federation" => ["Bangladesh cricket board is an assortment of clouns and fools", "public"]}
+
+  new_articles.each do |key, value|
+    a = Article.new(title: key, body: value[0], status: value[1])
+    a.save
+  end
