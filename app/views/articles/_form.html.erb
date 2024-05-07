@@ -1,0 +1,39 @@
+<%= form_with model: article do |form| %>
+  <div class="row mb-3">
+    <div class="col-sm-3 col-form-label">
+      <%= form.label :title %><br>
+    </div>
+    <div class="col-sm-9">
+      <div class="row form-control">
+        <%= form.text_field :title %>
+        <% article.errors.full_messages_for(:title).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-sm-3 col-form-label">
+      <%= form.label :body %><br>
+    </div>
+    <div class="col-sm-9">
+      <div class="row form-control">
+        <%= form.text_field :body %>
+        <% article.errors.full_messages_for(:body).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>
+
+
