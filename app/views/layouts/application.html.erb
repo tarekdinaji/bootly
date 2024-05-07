@@ -32,11 +32,11 @@
                   Article list
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <% Aarticle.all%>
-
-                  <li><a class="dropdown-item" href="http://127.0.0.1:3000/articles/2">BCS</a></li>
-                  <li><a class="dropdown-item" href="http://127.0.0.1:3000/articles/11">Dinajpur</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <% @articles.each do |article| %>
+                      <li>
+                        <%= link_to article.title, article, class:"dropdown-item" %>
+                      </li>
+                    <% end %>
                 </ul>
               </li>
               <li class="nav-item">
